@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Books</h2>
+<form action="/searchbooks" method="POST" >
+  <label  style="  position: absolute; color:black; left:20%;  top:31%;  width:12.0%;  font-size: auto;  aspect-ratio:18.84; ">Enter book</label> 
+  <input required style="  position: absolute; color:black; left:33%;  top:31%;  width:12.0%;  font-size: 1vw;  aspect-ratio:18.84; " name="i">
+
+<button type="submit" style="position: absolute; left:65%; top:31%; width:5.0%; height:4.0%; background-color:#ccc; color:black;">Search</button>
+</form>
+<div style="position: absolute; left:25%; top:50%; height: 60vh; width:70vw; overflow-y: auto; border: 1px solid white;">
+  <table style="border:1px solid #ccc; border-collapse: collapse;">
+    <tr><th>Book ID</th><th>Name</th><th>Cost</th><th>View More</th></tr>
+    {% for a in books %}
+    <tr>
+        <td>{{a.book_id}}</td>
+        <td>{{a.bookname}}</td>
+        <td>{{a.cost}}</td>
+        <td><button onclick="window.location.href='/book/{{ a.book_id }}';" >{{a.book_id}}</button>
+        </td>
+    </tr>
+    {%endfor%}
+  </table>
+</div>
+ {% endblock %}

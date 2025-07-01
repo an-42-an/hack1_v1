@@ -1,0 +1,23 @@
+<!--form action="/" method="get">
+   <input name="q" placeholder="Search by book/library/location" required>
+   <select name="type" required>
+    <option value="" disabled selected>Search for</option>
+     <option value="book">Books</option>
+     <option value="lib">Libraries</option>
+  </select-->
+  <button  onclick="window.location.href='/searchbooks';">Search Books</button>
+    <button  onclick="window.location.href='/searchlib';">Search Libraries</button>
+{% if flag %}
+<button  onclick="window.location.href='/login';">Login</button>
+<button  onclick="window.location.href='/register';">Register account</button>
+<button  onclick="window.location.href='/newlib';">Register Library</button>
+{% else %}
+<button  onclick="window.location.href='/logout';">Logout</button>
+{% endif %}
+{% if msg %}
+<script>
+  alert("{{ msg }}");
+</script>
+{% endif %}
+   <!--button type="submit">Search</button>
+ </form-->

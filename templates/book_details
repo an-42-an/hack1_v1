@@ -1,0 +1,13 @@
+<h2>{{ book.bookname }}</h2>
+# <p>Located in: <a href="/library/{{ lib.name }}">{{ lib.name }}</a>, Shelf ID: {{ book.shelf_id }}</p>
+# <h3>Reviews</h3>
+# {% for r in reviews %}<p>{{ r.username }} ({{ r.rating }}/5): {{ r.comments }}</p>{% endfor %}
+# {% if session.get('user') %}
+# <form action="/add_review/book/{{ book.bookname }}" method="post">
+#   <input name="library" value="{{ lib.name }}" hidden>
+#   <input name="rating" type="number" min="1" max="5" required>
+#   <textarea name="comments"></textarea>
+#   <button type="submit">Submit Review</button>
+# </form>
+# <a href="/reserve/{{ book.bookname }}/{{ lib.name }}">Reserve</a>
+# {% endif %}
