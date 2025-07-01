@@ -85,11 +85,11 @@ def load_user(id):
     return User.query.filter_by(username=id).first()
 @app.route('/')
 def home():
-    return render_template('index.html',flag='user' not in session)
+    return render_template('index.html',flag='_user_id' not in session)
 @app.route('/login',methods=['GET','POST'])
 def login():
     if request.method=='GET':
-        return render_template('login.html')
+        return render_template('login.html',flag='_user_id' not in session)
     else:
         user=request.form.get('Username')
         arg=User.query.filter_by(username=user).first()
@@ -101,7 +101,7 @@ def login():
                 return redirect('/')
         except Exception as e:
             print(f"Error verifying password: {e}")
-            return render_template('login.html', msg="Invalid credentials. Enter correct details")
+            return render_template('login.html', msg="Invalid credentials. Enter correct details",flag='_user_id' not in session)
     
 @app.route("/logout")
 @login_required
@@ -115,7 +115,7 @@ def searchbooks():
     else:
         i=request.form.get('i').strip()
         books=Book.query.filter(Book.bookname.ilike(f"%{i}%")).all()
-    return render_template('searchbooks.html', books=books)
+    return render_template('searchbooks.html', books=books,flag='_user_id' not in session)
 @app.route('/searchlib', methods=['GET', 'POST'])
 def searchlib():
     if request.method=='GET':
@@ -123,7 +123,7 @@ def searchlib():
     else:
         i=request.form.get('i').strip()
         libs = Library.query.filter((Library.name.ilike(f"%{i}%")) | (Library.location.ilike(f"%{i}%"))).all()
-    return render_template('searchlib.html', libs=libs)
+    return render_template('searchlib.html', libs=libs,flag='_user_id' not in session)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -134,6 +134,7 @@ def register():
             
         db.session.commit()
         return redirect('/login')
+    print('hi')
     return render_template('register.html')
 
 @app.route('/newlib', methods=['GET', 'POST'])
@@ -157,7 +158,7 @@ def newlib():
             db.session.add(Shelf(lib_id=l.lib_id))
         db.session.commit()
         return redirect('/login')
-    return render_template('newlib.html')
+    return render_template('newlib.html',flag='_user_id' not in session)
 
 if __name__ == '__main__':
     with app.app_context():

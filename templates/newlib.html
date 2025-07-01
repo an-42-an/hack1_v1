@@ -1,19 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h4  style="  position: absolute;  left:20.08%;  top:13.12%;  width:30%;  font-size: 1.359vw;  height:4.170%; color:#222222">Register your Library</h4> 
+<img src="static/home1.jpg" style="  position: absolute; left:59.90%;  top:17.56%;  width:34.78%;  aspect-ratio:1.411; ">
+
 <form action="/newlib" method="POST" >
 
-<label  style="  position: absolute;  left:60%;  top:45%;  width:5.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Library name</label> 
-<input title="No special characters" type="text" required  style="  position: absolute;  left:65%;  top:45%;  width:8.0%;  height:2.0%; " name="name" >
-<label  style="  position: absolute;  left:60.00%;  top:50.00%; color:#222222; font-size: 1vw" >Admin Password</label> 
-<input title="No spaces" type="password" required style="  position: absolute;  left:65%;  top:50%;  width:8.0%;  height:2.0%; " name="password" pattern="[^ ]+">
-<label  style="  position: absolute;  left:60%;  top:55%;  width:5.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Location</label> 
-<input type="text" required  style="  position: absolute;  left:65%;  top:55%;  width:8.0%;  height:2.0%; " name="location">
-<label  style="  position: absolute;  left:60%;  top:60%;  width:5.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Address</label> 
-<textarea name="address" rows="3" style="  position: absolute;  left:65%;  top:60%;  width:8.0%;  height:6.0%; "></textarea>
+<label  style="  position: absolute;  left:20%;  top:25%;  width:15.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Library name</label> 
+<input title="No special characters" type="text" required  style="  position: absolute;  left:35%;  top:25%;  width:8.0%;  height:2.0%; " name="name" >
+<label  style="  position: absolute;  left:20.00%;  top:30.00%; color:#222222; font-size: 1vw" >Admin Password</label> 
+<input title="No spaces" type="password" required style="  position: absolute;  left:35%;  top:30%;  width:8.0%;  height:2.0%; " name="password" pattern="[^ ]+">
+<label  style="  position: absolute;  left:20%;  top:35%;  width:15.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Location</label> 
+<input type="text" required  style="  position: absolute;  left:35%;  top:35%;  width:8.0%;  height:2.0%; " name="location">
+<label  style="  position: absolute;  left:20%;  top:40%;  width:15.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Address</label> 
+<textarea name="address" rows="3" style="  position: absolute;  left:35%;  top:40%;  width:8.0%;  height:6.0%; "></textarea>
 <!--input type="text" required  style="  position: absolute;  left:65%;  top:60%;  width:8.0%;  height:6.0%; " name="address"-->
-<label  style="  position: absolute;  left:60%;  top:70%;  width:5.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Phone no</label> 
-<input type="text" required  style="  position: absolute;  left:65%;  top:70%;  width:8.0%;  height:2.0%; " name="contact" pattern="[0-9]{10}" >
-<label  style="  position: absolute;  left:60%;  top:75%;  width:5.0%;  font-size: 1vw;  height:2.0%; color:#222222"  pattern="[0-9]" >Total Shelves</label> 
-<input type="text" required  style="  position: absolute;  left:65%;  top:75%;  width:8.0%;  height:2.0%; " name="shelves">
+<label  style="  position: absolute;  left:20%;  top:50%;  width:15.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Phone no</label> 
+<input type="text" required  style="  position: absolute;  left:35%;  top:50%;  width:8.0%;  height:2.0%; " name="contact" pattern="[0-9]{10}" >
+<label  style="  position: absolute;  left:20%;  top:55%;  width:15.0%;  font-size: 1vw;  height:2.0%; color:#222222"  pattern="[0-9]" >Total Shelves</label> 
+<input type="text" required  style="  position: absolute;  left:35%;  top:55%;  width:8.0%;  height:2.0%; " name="shelves">
 <br>
-<button type="submit" style="position: absolute; left:65%; top:80%; width:5.0%; height:3.0%; border:none; background-color:whitesmoke; color:black; font-size: 1vw">Submit</button>
+<button type="submit" style="position: absolute; left:35%; top:60%; width:5.0%; height:3.0%; border:none; background-color:white; color:black; font-size: 1vw">Submit</button>
 
 </form >
+{%endblock%}

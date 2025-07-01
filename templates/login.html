@@ -1,10 +1,39 @@
-<form method="post" action="/login">
-   <input name="Username" placeholder="Username" required>
-   <input name="Password" type="password" placeholder="Password" required>
-   <button type="submit">Login</button>
- </form>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+    body {
+      overflow:hidden;
+    }
+    button:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);;
+    }
+    </style>
+    
+    <title> LOGIN </title>
+</head>
+{% extends "base.html" %}
+{% block content %}
+<body>
+<img src="static/home1.jpg" style="  position: absolute; left:9.90%;  top:17.56%;  width:34.78%;  aspect-ratio:1.411; ">
+<div  style="  position: absolute;  left:0%;  top:0%;  width:100.0%; z-index:-10; height:100%; background-color:rgba(247, 220, 103, 0.4);"></div> 
+<h1  style="  position: absolute;  left:54.53%;  top:8.89%;  width:40.25%;  font-size: 4.25vw;  height:24.32%; color:#222222">Get Your Book</h1> 
+<h4  style="  position: absolute;  left:60.08%;  top:34.12%;  width:30%;  font-size: 1.359vw;  height:4.170%; color:#222222">LOGIN</h4> 
+<form action="/login" method="POST" name="loginform" >
+
+<label  style="  position: absolute;  left:60%;  top:45%;  width:5.0%;  font-size: 1vw;  height:2.0%; color:#222222" >Username</label> 
+
+<input type="text" required  style="  position: absolute;  left:65%;  top:45%;  width:8.0%;  height:2.0%; " name="Username">
+<label  style="  position: absolute;  left:60.00%;  top:50.00%; color:#222222; font-size: 1vw" >Password</label> 
+<input type="password" required style="  position: absolute;  left:65%;  top:50%;  width:8.0%;  height:2.0%; " name="Password">
+<br>
+<button type="submit" style="position: absolute; border:none; left:65%; top:55%; width:5.0%; height:3.0%; background-color:whitesmoke; color:black; font-size: 1vw">Submit</button>
+
+</form >
 {% if msg %}
 <script>
   alert("{{ msg }}");
 </script>
 {% endif %}
+<a href="/register" style="color:#222222; position: absolute; top: 65%; left: 65%;">Or create new account</a>
+{%endblock%}

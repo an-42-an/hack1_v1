@@ -1,23 +1,10 @@
-<!--form action="/" method="get">
-   <input name="q" placeholder="Search by book/library/location" required>
-   <select name="type" required>
-    <option value="" disabled selected>Search for</option>
-     <option value="book">Books</option>
-     <option value="lib">Libraries</option>
-  </select-->
-  <button  onclick="window.location.href='/searchbooks';">Search Books</button>
-    <button  onclick="window.location.href='/searchlib';">Search Libraries</button>
-{% if flag %}
-<button  onclick="window.location.href='/login';">Login</button>
-<button  onclick="window.location.href='/register';">Register account</button>
-<button  onclick="window.location.href='/newlib';">Register Library</button>
-{% else %}
-<button  onclick="window.location.href='/logout';">Logout</button>
-{% endif %}
-{% if msg %}
-<script>
-  alert("{{ msg }}");
-</script>
-{% endif %}
-   <!--button type="submit">Search</button>
- </form-->
+{% extends "base.html" %}
+{% block content %}
+<img src="static/home1.jpg" style="  position: absolute; left:30.90%;  top:37.56%;  width:34.78%;  aspect-ratio:1.411; ">
+<div  style="  position: absolute;  left:0%;  top:0%;  width:100.0%; z-index:-10; height:100%; background-color:rgba(247, 220, 103, 0.4);"></div> 
+<h1  style="  position: absolute;  left:35.53%;  top:8.89%;  width:40.25%;  font-size: 4.25vw;  height:24.32%; color:#222222">Get Your Book</h1> 
+<div  style="  position: absolute;  left:30.53%;  top:28.89%;  width:50.25%;  font-size: 1.25vw;  height:24.32%; color:#222222">
+Oops, landed in the wrong page! Use the menu above to navigate to required page!
+</div> 
+
+{%endblock%}
